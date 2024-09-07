@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+<head>
+  <meta charset="UTF-8">
+ <title>Login - Organyxhub</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'><link rel="stylesheet" href="{% static './login-style.css' %}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" crossorigin="anonymous"><link rel="stylesheet" href="{% static './login-style.css' %}">
+  <link rel="icon" href="./logo02-removebg.png" type="image/png">
+</head>
+<body>
+<!-- parcial:index.parcial.html -->
+<h2>Login</h2>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>Criar conta</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-x-twitter"></i></a>
+                <a href="#" class="social"><i class="fa-brands fa-google"></i></a>
+			</div>
+			<span>ou use seu e-mail para cadastro</span>
+			<input type="text" placeholder="Nome" />
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<button>Inscrever-se</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="#">
+			<h1>Entrar</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-x-twitter"></i></a>
+				<a href="#" class="social"><i class="fa-brands fa-google"></i></i></a>
+			</div>
+			<span>ou use sua conta</span>
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<a href="#">Esqueceu sua senha?</a>
+			<button>Entrar</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<img src="{% static 'logo02-removebg1.png' %}" alt="img" width=60 height=60>
+				<h1>Bem vindo de volta!</h1>
+				<p>Para manter-se conectado conosco, faça login com suas informações pessoais</p>
+				<button class="ghost" id="signIn">Entrar</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<img src="{% static 'logo02-removebg1.png' %}" alt="texto alternativo" width=60 height=60>
+				<h1>Fala, amigo!</h1>
+				<p>Faça a sua conta para se juntar ao clubinho</p>
+				<button class="ghost" id="signUp">Registrar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- parcial -->
+  <script>
+
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+  </script>
+
+</body>
+</html>
